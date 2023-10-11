@@ -3,7 +3,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #A8D5FE;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -14,5 +14,15 @@
 }
 
 .App-link {
-  color: #61dafb;
+  color: #fff;
+  font-weight: 700;
+  font-size: 3rem;
+}
+.sub-title{
+  color: #000;
+  font-weight: 700;
+  font-size: 4rem;
+}
+.title-theme{
+  color: #000;
 }
