@@ -1,14 +1,27 @@
-import "./App.css";
+import { BrowserRouter } from "react-router-dom";
+import { ConfigProvider } from "antd";
+import Pees from "./app/Pees";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <div className="App-link">Sleep Tech</div>
-        <div className="sub-title">PeeS</div>
-        <div className="title-theme">PeeS be with you. Sleep with PeeS!</div>
-      </header>
-    </div>
+    <BrowserRouter>
+      <ConfigProvider
+        theme={{
+          token: {
+            colorPrimary: "#015871",
+          },
+          components: {
+            Menu: {
+              colorPrimary: "#fff",
+              itemBg: "#015871",
+              colorText: "#fff",
+            },
+          },
+        }}
+      >
+        <Pees />
+      </ConfigProvider>
+    </BrowserRouter>
   );
 }
 
