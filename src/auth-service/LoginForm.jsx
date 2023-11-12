@@ -1,25 +1,10 @@
-import { useNavigate } from "react-router-dom";
+import { Button as AntdButton, Form, Input } from "antd";
 import styled from "styled-components";
-import { Button as AntdButton, Checkbox, Form, Input } from "antd";
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
 
-function Login() {
-  const navigate = useNavigate();
-  const onFinish = () => {
-    navigate("/dashboard");
-  };
+function LoginForm({ onFinish }) {
   return (
-    <Form
-      name="log-in"
-      initialValues={{
-        remember: true,
-      }}
-      onFinish={onFinish}
-      onFinishFailed={() => {
-        navigate("/login");
-      }}
-      autoComplete="off"
-    >
+    <Form name="login" onFinish={onFinish} autoComplete="off">
       <Form.Item
         name="username"
         rules={[
@@ -44,10 +29,6 @@ function Login() {
         <Input.Password placeholder="Password" prefix={<LockOutlined />} />
       </Form.Item>
 
-      <Form.Item name="remember" valuePropName="checked">
-        <Checkbox>Remember me</Checkbox>
-      </Form.Item>
-
       <Form.Item>
         <Button type="primary" htmlType="submit">
           Submit
@@ -57,7 +38,7 @@ function Login() {
   );
 }
 
-export default Login;
+export default LoginForm;
 
 const Button = styled(AntdButton)`
   width: 100%;

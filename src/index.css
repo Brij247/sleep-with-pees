@@ -12,3 +12,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+.ant-fullcalendar-header.ant-picker-calendar-header.ant-radio-group.ant-radio-group-outline.ant-picker-calendar-mode-switch.css-dev-only-do-not-override-tmpt6{
+  
+  display: none !important
+}

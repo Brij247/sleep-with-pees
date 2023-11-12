@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Tabs, Typography } from "antd";
 import styled from "styled-components";
 
@@ -8,9 +9,13 @@ const { Text } = Typography;
 
 function AuthFrame() {
   document.title = "Sign in - Sleep with PeeS";
+
+  const [activeKey, setActiveKey] = useState("1");
+
   const onChange = (key) => {
-    console.log(key);
+    setActiveKey(key);
   };
+
   const items = [
     {
       key: "1",
@@ -23,6 +28,7 @@ function AuthFrame() {
       children: <Register />,
     },
   ];
+
   return (
     <Container>
       <Content>
@@ -32,7 +38,11 @@ function AuthFrame() {
             <br />
             <Text type="secondary">Sign in to continue</Text>
           </Header>
-          <Tabs defaultActiveKey="1" items={items} onChange={onChange} />
+          <Tabs
+            defaultActiveKey={activeKey}
+            items={items}
+            onChange={onChange}
+          />
         </Frame>
       </Content>
       <div className="ocean">
