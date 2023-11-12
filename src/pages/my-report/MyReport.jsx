@@ -1,10 +1,8 @@
 import { Card, Result } from "antd";
-import React from "react";
 
-function Playlist() {
-  document.title = "Playlist - Sleep with PeeS";
+function MyReport() {
   return (
-    <Card title={"Playlist"}>
+    <Card title={"My reports"}>
       <Result
         status="403"
         title="Under construction"
@@ -14,4 +12,4 @@ function Playlist() {
   );
 }
 
-export default Playlist;
+export default MyReport;
