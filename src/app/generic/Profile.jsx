@@ -1,7 +1,8 @@
-import React from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 function Profile() {
+  const navigate = useNavigate();
   const profile = [
     <svg
       width="20"
@@ -22,7 +23,7 @@ function Profile() {
   return (
     <Hero>
       <Logo>Sleep Tech</Logo>
-      <UserSection>
+      <UserSection onClick={() => navigate("/my-profile")}>
         <div>{profile}</div>
         <span>username.com</span>
       </UserSection>
@@ -46,6 +47,7 @@ const Logo = styled.div`
   text-align: center;
 `;
 const UserSection = styled.div`
+  cursor: pointer;
   color: #015871;
   display: flex;
   justify-content: center;
