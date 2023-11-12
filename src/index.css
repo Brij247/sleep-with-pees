@@ -1,5 +1,4 @@
 body {
-
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -11,4 +10,8 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.ant-fullcalendar-header.ant-picker-calendar-header.ant-radio-group.ant-radio-group-outline.ant-picker-calendar-mode-switch.css-dev-only-do-not-override-tmpt6{
+  display: none !important
 }
