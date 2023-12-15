@@ -28,7 +28,7 @@ function NoiseChart() {
     },
   };
   return (
-    <NoiseChartCard title={"Recent Noice Analysis"}>
+    <NoiseChartCard title={"Recent Noise Analysis"}>
       <Line {...config} />
     </NoiseChartCard>
   );
