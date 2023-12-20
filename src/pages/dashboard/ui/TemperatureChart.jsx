@@ -28,7 +28,7 @@ const TemperatureChart = () => {
     },
   };
   return (
-    <TemperatureChartCard title={"Recent Temperature Analysis"}>
+    <TemperatureChartCard title={"Recent temperature analysis"}>
       <Line {...config} />
     </TemperatureChartCard>
   );

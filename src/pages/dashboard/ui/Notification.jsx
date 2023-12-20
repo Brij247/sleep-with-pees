@@ -1,11 +1,12 @@
-import { Card, Carousel, Col, Modal, Row, Space } from "antd";
+import { useState } from "react";
+import { Card, Carousel, Col, Modal, Row } from "antd";
 import styled from "styled-components";
 import {
   BellTwoTone,
   LeftCircleOutlined,
   RightCircleOutlined,
 } from "@ant-design/icons";
-import { useState } from "react";
+
 const { Meta } = Card;
 
 function Notification() {
@@ -45,29 +46,32 @@ function Notification() {
     >
       {notifData?.map((items, index) => {
         return (
-          <Row gutter={24} key={index}>
-            <Col span={23} key={index}>
-              <Card
-                key={index}
-                hoverable
-                onClick={(items) => nofifyMe(items.data)}
-                style={{
-                  border: "2px solid #015871",
-                }}
-              >
-                <Meta
+          <>
+            <Row gutter={[24, 24]} key={index}>
+              <Col span={23} key={index} xs={23} sm={23} md={23}>
+                <Card
+                  key={index}
+                  hoverable
+                  onClick={(items) => nofifyMe(items.data)}
                   style={{
-                    height: "7vh",
+                    border: "2px solid #015871",
                   }}
-                  avatar={<BellTwoTone twoToneColor="#eb2f96" />}
-                  description={items.data}
-                />
-              </Card>
-            </Col>
+                >
+                  <Meta
+                    style={{
+                      height: "7vh",
+                    }}
+                    // avatar={<SleepDiary />}
+                    avatar={<BellTwoTone twoToneColor="#eb2f96" />}
+                    description={items.data}
+                  />
+                </Card>
+              </Col>
+            </Row>
             <Modal open={notifyMe} onOk={hideModal} onCancel={hideModal}>
               {items.data}
             </Modal>
-          </Row>
+          </>
         );
       })}
     </StyledCarousel>
