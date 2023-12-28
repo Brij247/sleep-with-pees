@@ -1,6 +1,6 @@
 {
   "homepage": "https://brij247.github.io/sleep-with-pees/",
-  "name": "check.io",
+  "name": "sleep-with-pees",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -28,9 +28,9 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "predeply":"npm run build",
-    "deploy":"gh-pages -d build",
     "build": "react-scripts build",
+    "predeploy":"npm run build",
+    "deploy":"gh-pages -b gh-pages -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

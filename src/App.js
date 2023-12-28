@@ -4,7 +4,7 @@ import Pees from "./app/Pees";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/sleep-with-pees">
       <ConfigProvider
         theme={{
           token: {
