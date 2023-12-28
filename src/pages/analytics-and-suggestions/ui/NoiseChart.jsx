@@ -40,7 +40,7 @@ function NoiseChart() {
     );
   };
   return (
-    <Card title={"Noice Analysis"} extra={<SelectTab />}>
+    <Card title={"Noise Analysis"} extra={<SelectTab />}>
       <Line {...config} />
     </Card>
   );
