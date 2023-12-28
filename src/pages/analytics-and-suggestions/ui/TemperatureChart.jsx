@@ -1,8 +1,12 @@
-import { Card } from "antd";
+import { useState } from "react";
+import { Card, Radio } from "antd";
 import { Line } from "@ant-design/plots";
-import styled from "styled-components";
 
 const TemperatureChart = () => {
+  const [size, setSize] = useState("yearly");
+  const handleSizeChange = (e) => {
+    setSize(e.target.value);
+  };
   const data = [
     { date: "2023-10-01", temperature: 20 },
     { date: "2023-10-02", temperature: 22 },
@@ -27,15 +31,20 @@ const TemperatureChart = () => {
       },
     },
   };
+  const SelectTab = () => {
+    return (
+      <Radio.Group value={size} onChange={handleSizeChange}>
+        <Radio.Button value="weekly">Weekly</Radio.Button>
+        <Radio.Button value="monthly">Monthly</Radio.Button>
+        <Radio.Button value="yearly">Yearly</Radio.Button>
+      </Radio.Group>
+    );
+  };
   return (
-    <TemperatureChartCard title={"Recent temperature analysis"}>
+    <Card title={"Temperature Analysis"} extra={<SelectTab />}>
       <Line {...config} />
-    </TemperatureChartCard>
+    </Card>
   );
 };
 
 export default TemperatureChart;
-
-const TemperatureChartCard = styled(Card)`
-  box-shadow: 0 3px 8px rgba(44, 130, 143, 0.2);
-`;
