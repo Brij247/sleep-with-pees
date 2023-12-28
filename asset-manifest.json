@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/sleep-with-pees/static/css/main.3bc5ecb2.css",
-    "main.js": "/sleep-with-pees/static/js/main.9947c5bd.js",
+    "main.js": "/sleep-with-pees/static/js/main.f1774c74.js",
     "static/js/787.ac4f35e5.chunk.js": "/sleep-with-pees/static/js/787.ac4f35e5.chunk.js",
     "static/media/Distraction.gif": "/sleep-with-pees/static/media/Distraction.0aa70588e6cb45ed2ea7.gif",
     "static/media/bed.gif": "/sleep-with-pees/static/media/bed.ba26e6ac92e412067d55.gif",
@@ -45,11 +45,11 @@
     "static/media/recursive-cyrillic-ext-400-normal.woff2": "/sleep-with-pees/static/media/recursive-cyrillic-ext-400-normal.bd74e81400bd97d26876.woff2",
     "index.html": "/sleep-with-pees/index.html",
     "main.3bc5ecb2.css.map": "/sleep-with-pees/static/css/main.3bc5ecb2.css.map",
-    "main.9947c5bd.js.map": "/sleep-with-pees/static/js/main.9947c5bd.js.map",
+    "main.f1774c74.js.map": "/sleep-with-pees/static/js/main.f1774c74.js.map",
     "787.ac4f35e5.chunk.js.map": "/sleep-with-pees/static/js/787.ac4f35e5.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3bc5ecb2.css",
-    "static/js/main.9947c5bd.js"
+    "static/js/main.f1774c74.js"
   ]
 }
