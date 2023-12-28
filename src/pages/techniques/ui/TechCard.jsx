@@ -7,7 +7,13 @@ import Visualization from "../assets/Visualization_of_light.gif";
 import negative from "../assets/negative_thoughts.gif";
 import ten from "../assets/ten_things.gif";
 import walk from "../assets/walk.gif";
+import first from "../assets/first01.gif";
+import second from "../assets/secondCroped.gif";
+import thirdcroped from "../assets/thirdcroped.gif";
+import fourth from "../assets/fourthCroped.gif";
+import fifth from "../assets/fifthCroped.gif";
 import DetailedTechCard from "./DetailedTechCard";
+import { ExportOutlined } from "@ant-design/icons";
 
 function TechCard() {
   const [isDetailVisible, setIsDetailVisible] = useState(false);
@@ -39,49 +45,49 @@ function TechCard() {
       ),
       logo: Visualization,
     },
-    {
-      key: "2",
-      label: "Identify negative thoughts",
-      content: "Identify negative thoughts",
-      logo: negative,
-    },
-    {
-      key: "3",
-      label: "Distraction technique",
-      content: "Distraction technique",
-      logo: Distraction,
-    },
-    {
-      key: "4",
-      label: "Write about ten things",
-      content: "Write about ten things",
-      logo: ten,
-    },
-    {
-      key: "5",
-      label: "Go for a walk or ride outside",
-      content: "Go for a walk or ride outside",
-      logo: walk,
-    },
-    {
-      key: "6",
-      label: "Declutter - your bedroom",
-      content: "Declutter - your bedroom",
-      logo: bed,
-    },
+    // {
+    //   key: "2",
+    //   label: "Identify negative thoughts",
+    //   content: "Identify negative thoughts",
+    //   logo: negative,
+    // },
+    // {
+    //   key: "3",
+    //   label: "Distraction technique",
+    //   content: "Distraction technique",
+    //   logo: Distraction,
+    // },
+    // {
+    //   key: "4",
+    //   label: "Write about ten things",
+    //   content: "Write about ten things",
+    //   logo: ten,
+    // },
+    // {
+    //   key: "5",
+    //   label: "Go for a walk or ride outside",
+    //   content: "Go for a walk or ride outside",
+    //   logo: walk,
+    // },
+    // {
+    //   key: "6",
+    //   label: "Declutter - your bedroom",
+    //   content: "Declutter - your bedroom",
+    //   logo: bed,
+    // },
     {
       key: "7",
       label: "Cognitive Restructuring",
       content:
         "Recognizing and Changing Negative Sleep Thoughts, other thoughts that are negative or depressive, and ask the scientific/ medical practitioners for facts.",
-      logo: bed,
+      logo: negative,
     },
     {
       key: "8",
       label: "Guided Discovery ",
       content:
         "Ask questions to understand the issue and emotion deeply and the origin of the emotion/ feeling; “Where is it coming from”, “what is it trying to teach me”, “What is it wanting me to see”, ‘I am here”, “what do I believe”, Who/what taught me this’",
-      logo: bed,
+      logo: first,
     },
     {
       key: "9",
@@ -95,70 +101,72 @@ function TechCard() {
           steps so you gain confidence as you go, bit by bit.
         </>
       ),
-      logo: bed,
+      logo: fourth,
     },
     {
       key: "10",
       label: "Journaling ",
       content: (
         <Button
+          type="primary"
           onClick={() => {
             window.location.replace("/my-scribble-space");
           }}
         >
           Write down your thoughts
+          <ExportOutlined />
         </Button>
       ),
-      logo: bed,
+      logo: thirdcroped,
     },
     {
       key: "11",
       label: "Behavioural experiments ",
       content:
         "Precisely identify the belief/thought/process the experiment will target. Collaborate with your patient to brainstorm ideas for an experiment; be as specific as you can. Write predictions about the outcome and devise a method to record the outcome. Anticipate problems and brainstorm solutions.o	Conduct the experiment. Next step- Review the experiment and draw conclusions.",
-      logo: bed,
+      logo: Distraction,
     },
     {
       key: "12",
       label: "Role Playing ",
       content:
         "Improve problem solving skills : Role playing can help you work through different behaviors in potentially difficult situations. Playing out possible scenarios can lessen fear and can be used for: gaining familiarity and confidence in certain situations, practicing social skills, assertiveness training, improving communication skills",
-      logo: bed,
+      logo: first,
     },
     {
       key: "13",
       label: "Activity outside/ involving members ",
       content:
         "Playing board games, Sing along, Share their deepest stories, hear ones day or teachings, motivational quotes",
-      logo: bed,
+      logo: walk,
     },
     {
       key: "14",
       label: "Joy journal and gratidude ",
       content:
         "We maintain a journal with – “what makes me happy” and “5 things I am grateful for today”",
-      logo: bed,
+      logo: ten,
     },
     {
       key: "15",
       label: "Grounding techniques",
       content:
         "Use any this for grounding-  Walk barefoot on grass Look at the sky and breath deeply Drink water with blessing and thanking it, and say “I relax now” Use senses-  Watch the breath go out and in from the nostril",
-      logo: bed,
+      logo: thirdcroped,
     },
     {
       key: "16",
       label: "Affirmations ",
       content:
         "I love all all my parts completely, I enjoy good health, I am that I am, ",
-      logo: bed,
+      logo: fifth,
     },
     {
       key: "17",
       label: "Forgiveness ",
       content:
         "I forgive all your wrong doings done intentionally and untentionally and let go with love and grace, I forgive myself for all the actions that hurt myself intentionally or unintentionally",
-      logo: bed,
+      logo: ten,
     },
     {
       key: "18",
@@ -172,14 +180,14 @@ function TechCard() {
       label: "Recognition",
       content:
         "By saying and repeating these lines “I recognize I feel……”, I recognize my need to feel ……”, I recognize my resistance to let go off my need to feel……”",
-      logo: bed,
+      logo: second,
     },
     {
       key: "19",
       label: "Breathing exercise",
       content:
         "Left nostril breathing Deep breath with holding on the breath for 4 seconds Belly slow deep breath with visualisation Breath with sound “aah” ",
-      logo: bed,
+      logo: fifth,
     },
   ];
 
