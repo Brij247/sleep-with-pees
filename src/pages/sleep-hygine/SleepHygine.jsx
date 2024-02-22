@@ -7,7 +7,7 @@ import { NoiseChart, TemperatureChart } from "./ui";
 function SleepHygine() {
   document.title = "Sleep Hygine - Sleep with PeeS";
   const gutter = 32;
-  
+
   return (
     <Page
       title={"Sleep hygine parameters"}
@@ -32,6 +32,7 @@ function SleepHygine() {
 }
 
 export default SleepHygine;
+
 const Container = styled.div`
   padding: 32px;
 `;

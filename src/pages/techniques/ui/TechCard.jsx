@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Button, Card, Col, Modal, Row } from "antd";
+import { ExportOutlined } from "@ant-design/icons";
 
 import bed from "../assets/bed.gif";
 import Distraction from "../assets/Distraction.gif";
@@ -13,7 +14,6 @@ import thirdcroped from "../assets/thirdcroped.gif";
 import fourth from "../assets/fourthCroped.gif";
 import fifth from "../assets/fifthCroped.gif";
 import DetailedTechCard from "./DetailedTechCard";
-import { ExportOutlined } from "@ant-design/icons";
 
 function TechCard() {
   const [isDetailVisible, setIsDetailVisible] = useState(false);
@@ -45,36 +45,7 @@ function TechCard() {
       ),
       logo: Visualization,
     },
-    // {
-    //   key: "2",
-    //   label: "Identify negative thoughts",
-    //   content: "Identify negative thoughts",
-    //   logo: negative,
-    // },
-    // {
-    //   key: "3",
-    //   label: "Distraction technique",
-    //   content: "Distraction technique",
-    //   logo: Distraction,
-    // },
-    // {
-    //   key: "4",
-    //   label: "Write about ten things",
-    //   content: "Write about ten things",
-    //   logo: ten,
-    // },
-    // {
-    //   key: "5",
-    //   label: "Go for a walk or ride outside",
-    //   content: "Go for a walk or ride outside",
-    //   logo: walk,
-    // },
-    // {
-    //   key: "6",
-    //   label: "Declutter - your bedroom",
-    //   content: "Declutter - your bedroom",
-    //   logo: bed,
-    // },
+
     {
       key: "7",
       label: "Cognitive Restructuring",

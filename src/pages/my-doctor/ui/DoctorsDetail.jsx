@@ -85,9 +85,7 @@ const ProfileDetails = styled.div`
 `;
 
 const ProfileBtns = styled.div`
-  // margin-bottom: 20px;
   display: flex;
-  // flex-direction: column;
   align-items: center;
   justify-content: space-around;
 `;

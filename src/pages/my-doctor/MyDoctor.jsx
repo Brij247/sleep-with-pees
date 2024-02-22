@@ -7,6 +7,7 @@ import { MyDoctorProfile } from "./ui";
 function MyDoctor() {
   document.title = "My Doctor - Sleep with PeeS";
   const gutter = 32;
+
   return (
     <Page
       title={"My doctor"}
@@ -28,6 +29,7 @@ function MyDoctor() {
 }
 
 export default MyDoctor;
+
 const Container = styled.div`
   padding: 32px;
 `;

@@ -4,14 +4,17 @@ import { Card, Radio } from "antd";
 
 function NoiseChart() {
   const [size, setSize] = useState("yearly");
+
   const handleSizeChange = (e) => {
     setSize(e.target.value);
   };
+
   const data = [
     { x: "2023-10-01", y: 20 },
     { x: "2023-10-02", y: 22 },
     { x: "2023-10-03", y: 0 },
   ];
+
   const config = {
     data,
     xField: "x",
@@ -30,6 +33,7 @@ function NoiseChart() {
       },
     },
   };
+
   const SelectTab = () => {
     return (
       <Radio.Group value={size} onChange={handleSizeChange}>
@@ -39,6 +43,7 @@ function NoiseChart() {
       </Radio.Group>
     );
   };
+
   return (
     <Card title={"Noise Analysis"} extra={<SelectTab />}>
       <Line {...config} />

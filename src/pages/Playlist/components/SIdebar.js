@@ -1,12 +1,11 @@
-import React from "react";
+import { HomeOutlined, SearchOutlined, BookOutlined } from "@ant-design/icons";
+
 import "./Sidebar.css";
 import SidebarOption from "./SideBarOptions";
 import { useStateValue } from "../config/StateProvider";
-import { HomeOutlined, SearchOutlined, BookOutlined } from "@ant-design/icons";
 
 function Sidebar({ setPlaylistId }) {
   const [{ playlists }, dispatch] = useStateValue();
-  console.log(playlists, "playlist");
 
   return (
     <div className="sidebar">
