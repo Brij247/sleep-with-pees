@@ -27,6 +27,7 @@ function MyDoctorProfile() {
       content: "Dr. Aditya",
     },
   ];
+
   return (
     <Row gutter={[16, 16]}>
       {data.map((item, index) => (

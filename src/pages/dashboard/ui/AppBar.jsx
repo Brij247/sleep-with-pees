@@ -5,15 +5,18 @@ import {
   ClockCircleOutlined,
   ReadOutlined,
 } from "@ant-design/icons";
+
 const { Title } = Typography;
 
 const AppBar = () => {
   const handleSleepDiary = () => {
     window.location.replace("/sleep-diary");
   };
+
   const handleSleepHygine = () => {
     window.location.replace("/sleep-hygine");
   };
+
   const handleScribbleSpace = () => {
     window.location.replace("/my-scribble-space");
   };

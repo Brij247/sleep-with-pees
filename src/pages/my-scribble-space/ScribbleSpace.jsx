@@ -5,6 +5,7 @@ import { Editor, Scribble } from "./ui";
 
 function ScribbleSpace() {
   const [userSection, setUserSection] = useState("editor");
+
   const handleSizeChange = (e) => {
     setUserSection(e.target.value);
   };

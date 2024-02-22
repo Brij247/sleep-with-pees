@@ -38,6 +38,7 @@ function Register() {
       navigate("/login");
     }
   };
+
   return <RegisterForm onFinish={onFinish} />;
 }
 

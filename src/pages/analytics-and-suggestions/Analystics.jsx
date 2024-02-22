@@ -1,11 +1,13 @@
 import { Col, Row } from "antd";
+import styled from "styled-components";
+
 import { Page } from "../../app/generic";
 import { NoiseChart, TemperatureChart } from "../sleep-hygine/ui";
-import styled from "styled-components";
 
 function Analystics() {
   document.title = "Analytics and suggestions - Sleep with PeeS";
   const gutter = 32;
+
   return (
     <Page
       title={"Analytics and suggestions"}
@@ -30,6 +32,7 @@ function Analystics() {
 }
 
 export default Analystics;
+
 const Container = styled.div`
   padding: 32px;
 `;

@@ -6,6 +6,7 @@ import {
 } from "@ant-design/icons";
 import { Button as AntdButton, Input, Form, Select, InputNumber } from "antd";
 import styled from "styled-components";
+
 const { Option } = Select;
 
 const RegisterForm = ({ onFinish }) => {
@@ -144,6 +145,7 @@ const RegisterForm = ({ onFinish }) => {
 };
 
 export default RegisterForm;
+
 const Button = styled(AntdButton)`
   width: 100%;
 `;

@@ -8,16 +8,14 @@ function Editor() {
   const [value, setValue] = useState("");
 
   return (
-    <>
-      <div
-        style={{
-          height: "75vh",
-          width: "100%",
-        }}
-      >
-        <ReactQuill theme="snow" value={value} onChange={setValue} />
-      </div>
-    </>
+    <div
+      style={{
+        height: "75vh",
+        width: "100%",
+      }}
+    >
+      <ReactQuill theme="snow" value={value} onChange={setValue} />
+    </div>
   );
 }
 

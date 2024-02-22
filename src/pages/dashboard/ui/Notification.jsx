@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Card, Carousel, Col, Modal, Row } from "antd";
+import { Card, Carousel, Col, Modal, Row, Typography } from "antd";
 import styled from "styled-components";
 import {
   BellTwoTone,
@@ -8,10 +8,12 @@ import {
 } from "@ant-design/icons";
 
 const { Meta } = Card;
+const { Paragraph } = Typography;
 
 function Notification() {
   const [notifyMe, setNotifyMe] = useState(false);
-  const notifData = [
+
+  const myths = [
     {
       key: 0,
       myth: "Taking sleeping pills is the best solution for insomnia.",
@@ -38,6 +40,7 @@ function Notification() {
       data: " Insomnia can have various causes, including psychological, medical, and environmental factors. Its essential to identify and address the underlying cause of insomnia for effective treatment. ",
     },
   ];
+
   const nofifyMe = () => {
     setNotifyMe(true);
   };
@@ -45,6 +48,7 @@ function Notification() {
   const hideModal = () => {
     setNotifyMe(false);
   };
+
   return (
     <StyledCarousel
       slidesToShow={3}
@@ -53,7 +57,7 @@ function Notification() {
       nextArrow={<RightCircleOutlined />}
       infinite={false}
     >
-      {notifData?.map((items, index) => {
+      {myths?.map((items, index) => {
         return (
           <>
             <Row gutter={[24, 24]} key={index}>
@@ -62,7 +66,7 @@ function Notification() {
                   ellipsis
                   key={index}
                   hoverable
-                  onClick={(items) => nofifyMe(items.data)}
+                  onClick={nofifyMe}
                   style={{
                     border: "2px solid #015871",
                   }}
@@ -71,13 +75,27 @@ function Notification() {
                     style={{
                       height: "7vh",
                     }}
-                    // avatar={<SleepDiary />}
                     avatar={<BellTwoTone twoToneColor="#eb2f96" />}
-                    description={items.data}
+                    description={
+                      <Paragraph
+                        ellipsis={
+                          !notifyMe
+                            ? {
+                                rows: 2,
+                                expandable: true,
+                                symbol: "more",
+                              }
+                            : false
+                        }
+                      >
+                        {items.data}
+                      </Paragraph>
+                    }
                   />
                 </Card>
               </Col>
             </Row>
+
             <Modal
               title={items?.myth}
               open={notifyMe}
@@ -102,10 +120,8 @@ const StyledCarousel = styled(Carousel)`
     cursor: grab;
   }
   .slick-slide {
-    /* margin: 7px; */
   }
   .slick-list {
-    /* background: #015871; */
     height: 15vh;
   }
   > .slick-dots li button {

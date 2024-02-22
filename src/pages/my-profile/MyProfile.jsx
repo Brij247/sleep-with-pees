@@ -1,5 +1,4 @@
 import { Card, Result } from "antd";
-import React from "react";
 
 function MyProfile() {
   return (

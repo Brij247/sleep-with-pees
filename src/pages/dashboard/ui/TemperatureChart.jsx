@@ -9,6 +9,7 @@ const TemperatureChart = () => {
     { date: "2023-10-03", temperature: 25 },
     // Add more data points as needed
   ];
+
   const config = {
     data,
     xField: "date",
@@ -27,6 +28,7 @@ const TemperatureChart = () => {
       },
     },
   };
+
   return (
     <TemperatureChartCard title={"Recent temperature analysis"}>
       <Line {...config} />

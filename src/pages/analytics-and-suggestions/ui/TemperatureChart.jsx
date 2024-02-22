@@ -4,15 +4,18 @@ import { Line } from "@ant-design/plots";
 
 const TemperatureChart = () => {
   const [size, setSize] = useState("yearly");
+
   const handleSizeChange = (e) => {
     setSize(e.target.value);
   };
+
   const data = [
     { date: "2023-10-01", temperature: 20 },
     { date: "2023-10-02", temperature: 22 },
     { date: "2023-10-03", temperature: 25 },
     // Add more data points as needed
   ];
+
   const config = {
     data,
     xField: "date",
@@ -31,6 +34,7 @@ const TemperatureChart = () => {
       },
     },
   };
+
   const SelectTab = () => {
     return (
       <Radio.Group value={size} onChange={handleSizeChange}>
@@ -40,6 +44,7 @@ const TemperatureChart = () => {
       </Radio.Group>
     );
   };
+
   return (
     <Card title={"Temperature Analysis"} extra={<SelectTab />}>
       <Line {...config} />
