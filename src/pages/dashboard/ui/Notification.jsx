@@ -60,11 +60,11 @@ function Notification() {
       {myths?.map((items, index) => {
         return (
           <>
-            <Row gutter={[24, 24]} key={index}>
-              <Col span={23} key={index} xs={23} sm={23} md={23}>
+            <Row gutter={[24, 24]} key={items.key}>
+              <Col span={23} xs={23} sm={23} md={23}>
                 <Card
                   ellipsis
-                  key={index}
+                  key={items.key}
                   hoverable
                   onClick={nofifyMe}
                   style={{
@@ -75,7 +75,7 @@ function Notification() {
                     style={{
                       height: "7vh",
                     }}
-                    avatar={<BellTwoTone twoToneColor="#eb2f96" />}
+                    avatar={<BellTwoTone twoToneColor="#05b04c" />}
                     description={
                       <Paragraph
                         ellipsis={
