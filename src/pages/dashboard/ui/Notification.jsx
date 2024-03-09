@@ -12,6 +12,7 @@ const { Paragraph } = Typography;
 
 function Notification() {
   const [notifyMe, setNotifyMe] = useState(false);
+  const [mythData, setMyth] = useState({ title: "", myth: "" });
 
   const myths = [
     {
@@ -22,7 +23,7 @@ function Notification() {
     {
       key: 1,
       myth: "Insomnia is just a normal part of aging.",
-      data: "While sleep patterns may change with age, chronic insomnia is not a normal part of the aging process. Sleep problems in older adults can often be addressed and treated",
+      data: "While sleep patterns may change with age, chronic insomnia is not a normal part of the aging process. Sleep problems in older adults can often be addressed and treated.",
     },
     {
       key: 2,
@@ -32,7 +33,7 @@ function Notification() {
     {
       key: 3,
       myth: "Everyone needs eight hours of sleep per night.",
-      data: "The amount of sleep needed varies from person to person. While the average adult may require around 7-9 hours, individual sleep needs can range from 6-10 hours ",
+      data: "The amount of sleep needed varies from person to person. While the average adult may require around 7-9 hours, individual sleep needs can range from 6-10 hours.",
     },
     {
       key: 4,
@@ -41,7 +42,8 @@ function Notification() {
     },
   ];
 
-  const nofifyMe = () => {
+  const nofifyMe = (myth) => {
+    setMyth({ title: myth.myth, myth: myth.data });
     setNotifyMe(true);
   };
 
@@ -50,65 +52,66 @@ function Notification() {
   };
 
   return (
-    <StyledCarousel
-      slidesToShow={3}
-      arrows
-      prevArrow={<LeftCircleOutlined />}
-      nextArrow={<RightCircleOutlined />}
-      infinite={false}
-    >
-      {myths?.map((items, index) => {
-        return (
-          <>
-            <Row gutter={[24, 24]} key={items.key}>
-              <Col span={23} xs={23} sm={23} md={23}>
-                <Card
-                  ellipsis
-                  key={items.key}
-                  hoverable
-                  onClick={nofifyMe}
-                  style={{
-                    border: "2px solid #015871",
-                  }}
-                >
-                  <Meta
+    <>
+      <StyledCarousel
+        slidesToShow={3}
+        arrows
+        prevArrow={<LeftCircleOutlined />}
+        nextArrow={<RightCircleOutlined />}
+        infinite={false}
+      >
+        {myths?.map((items, index) => {
+          return (
+            <>
+              <Row gutter={[24, 24]} key={items.key}>
+                <Col span={23} xs={23} sm={23} md={23}>
+                  <Card
+                    ellipsis
+                    key={items.key}
+                    hoverable
+                    onClick={() => nofifyMe(items)}
                     style={{
-                      height: "7vh",
+                      border: "2px solid #015871",
                     }}
-                    avatar={<BellTwoTone twoToneColor="#05b04c" />}
-                    description={
-                      <Paragraph
-                        ellipsis={
-                          !notifyMe
-                            ? {
-                                rows: 2,
-                                expandable: true,
-                                symbol: "more",
-                              }
-                            : false
-                        }
-                      >
-                        {items.data}
-                      </Paragraph>
-                    }
-                  />
-                </Card>
-              </Col>
-            </Row>
-
-            <Modal
-              title={items?.myth}
-              open={notifyMe}
-              onOk={hideModal}
-              onCancel={hideModal}
-              footer={null}
-            >
-              {items.data}
-            </Modal>
-          </>
-        );
-      })}
-    </StyledCarousel>
+                  >
+                    <Meta
+                      style={{
+                        height: "7vh",
+                      }}
+                      avatar={<BellTwoTone twoToneColor="#05b04c" />}
+                      description={
+                        <Paragraph
+                          ellipsis={
+                            !notifyMe
+                              ? {
+                                  rows: 2,
+                                  expandable: true,
+                                  symbol: "more",
+                                }
+                              : false
+                          }
+                        >
+                          {items.data}
+                        </Paragraph>
+                      }
+                    />
+                  </Card>
+                </Col>
+              </Row>
+            </>
+          );
+        })}
+      </StyledCarousel>
+      <Modal
+        title={mythData?.title}
+        open={notifyMe}
+        onOk={hideModal}
+        onCancel={hideModal}
+        footer={null}
+      >
+        {mythData.myth}
+      </Modal>
+    </>
   );
 }
 
