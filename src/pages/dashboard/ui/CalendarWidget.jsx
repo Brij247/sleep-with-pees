@@ -10,7 +10,6 @@ import styled from "styled-components";
 
 function CalendarWidget() {
   const [currentEvents, setCurrentEvents] = useState([]);
-  console.log(currentEvents);
 
   const handleDateClick = (selected) => {
     const title = prompt("Please enter a new title for your event");
@@ -38,6 +37,18 @@ function CalendarWidget() {
     }
   };
 
+  const sampleIntiEvents = [
+    {
+      id: "12315",
+      title: "All-day event",
+      date: "2024-02-14",
+    },
+    {
+      id: "5123",
+      title: "Timed event",
+      date: "2024-02-28",
+    },
+  ];
   return (
     <CalendarCard title={"My physical diet and activity"}>
       <FullCalendar
@@ -57,18 +68,7 @@ function CalendarWidget() {
         select={handleDateClick}
         eventClick={handleEventClick}
         eventsSet={(events) => setCurrentEvents(events)}
-        initialEvents={[
-          {
-            id: "12315",
-            title: "All-day event",
-            date: "2023-12-14",
-          },
-          {
-            id: "5123",
-            title: "Timed event",
-            date: "2023-11-28",
-          },
-        ]}
+        initialEvents={sampleIntiEvents}
       />
     </CalendarCard>
   );

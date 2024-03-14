@@ -18,8 +18,8 @@ function MyDiet() {
     console.log("Selected Time: ", value);
     console.log("Formatted Selected Time: ", dateString);
   };
+
   const onOk = (value) => {
-    console.log("onOk: ", value);
     setOpenActivityModal(false);
   };
 

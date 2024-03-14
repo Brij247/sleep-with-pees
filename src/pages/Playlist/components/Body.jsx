@@ -1,12 +1,8 @@
 import React from "react";
 import "./Body.css";
 import Header from "./Header";
-// import { useStateValue } from "./StateProvider";
 import SongRow from "./SongRow";
-// import PlayCircleFilledIcon from "@material-ui/icons/PlayCircleFilled";
-// import FavoriteIcon from "@material-ui/icons/Favorite";
-// import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
-import { HomeOutlined, PlayCircleFilled } from "@ant-design/icons";
+import { PlayCircleFilled } from "@ant-design/icons";
 import { useStateValue } from "../config/StateProvider";
 function Body({ spotify }) {
   const [{ discover_weekly }, dispatch] = useStateValue();
@@ -97,8 +93,6 @@ function Body({ spotify }) {
       <div className="body__songs">
         <div className="body__icons">
           <PlayCircleFilled className="body__shuffle" onClick={playPlaylist} />
-          {/* <HomeOutlined fontSize="large" /> */}
-          {/* <HomeOutlined /> */}
         </div>
 
         {discover_weekly?.tracks?.items?.map((item) => (

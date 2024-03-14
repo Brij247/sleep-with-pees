@@ -26,6 +26,7 @@ function Techniques() {
 }
 
 export default Techniques;
+
 const Container = styled.div`
   padding: 32px;
 `;

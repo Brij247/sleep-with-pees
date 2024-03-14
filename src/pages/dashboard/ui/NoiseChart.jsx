@@ -9,6 +9,7 @@ function NoiseChart() {
     { x: "2023-10-03", y: 0 },
     // Add more data points as needed
   ];
+
   const config = {
     data,
     xField: "x",
@@ -27,6 +28,7 @@ function NoiseChart() {
       },
     },
   };
+
   return (
     <NoiseChartCard title={"Recent noise analysis"}>
       <Line {...config} />

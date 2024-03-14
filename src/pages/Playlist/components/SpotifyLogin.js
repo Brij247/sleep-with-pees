@@ -1,6 +1,5 @@
 import { accessUrl } from "../config/spotify";
 import "./SpotifyLogin.css";
-// import { accessUrl } from "./spotify";
 
 function Login() {
   return (

@@ -2,6 +2,7 @@ import { Card, Result } from "antd";
 
 function PsychoEducation() {
   document.title = "Psycho education - Sleep with PeeS";
+
   return (
     <Card title={"Psycho-education"}>
       <Result

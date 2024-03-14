@@ -1,18 +1,16 @@
-import React, { useEffect, useState } from "react";
-import "./Footer.css";
-// import { Grid, Slider } from "@material-ui/core";
+import React, { useEffect } from "react";
 import {
-  HomeOutlined,
   StepBackwardOutlined,
   StepForwardOutlined,
-  PauseOutlined,
-  CaretRightOutlined,
   PlayCircleOutlined,
   RetweetOutlined,
   PauseCircleOutlined,
   SwapOutlined,
 } from "@ant-design/icons";
+
+import "./Footer.css";
 import { useStateValue } from "../config/StateProvider";
+
 function Footer({ spotify }) {
   const [{ token, item, playing }, dispatch] = useStateValue();
   console.log(item);

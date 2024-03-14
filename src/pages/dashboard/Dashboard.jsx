@@ -13,6 +13,7 @@ import {
 function Dashboard() {
   document.title = "Sleep Diary - Sleep with PeeS";
   const gutter = 32;
+
   return (
     <Page
       title={"Dashboard"}
@@ -46,6 +47,7 @@ function Dashboard() {
 }
 
 export default Dashboard;
+
 const Container = styled.div`
   padding: 32px;
 `;

@@ -14,6 +14,7 @@ const { confirm } = Modal;
 export const Calender = () => {
   const [currentEvents, setCurrentEvents] = useState([]);
   const [addDayTask, setAddDayTask] = useState(false);
+
   console.log(currentEvents);
 
   const handleDateClick = (selected) => {

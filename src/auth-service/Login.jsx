@@ -1,20 +1,22 @@
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import { notification } from "antd";
 
 import LoginForm from "./LoginForm";
-import { axios } from "../services";
+import { baseUrl } from "../services/axios";
 
 function Login() {
   const navigate = useNavigate();
 
   const onFinish = async (values) => {
     try {
-      const response = await axios.post("/api/login/", values);
+      const response = await axios.post(`${baseUrl}/api/login/`, values);
       const token = response?.data?.token;
 
       if (token) {
         document.cookie = `token=${token}; path=/`;
-        axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+        localStorage.setItem("token", token);
+        axios.defaults.headers.common["Authorization"] = `Token ${token}`;
         notification.success({
           message: "Login Successful",
           description: "You have successfully logged in.",

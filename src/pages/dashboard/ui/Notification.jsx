@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Card, Carousel, Col, Modal, Row } from "antd";
+import { Card, Carousel, Col, Modal, Row, Typography } from "antd";
 import styled from "styled-components";
 import {
   BellTwoTone,
@@ -8,10 +8,13 @@ import {
 } from "@ant-design/icons";
 
 const { Meta } = Card;
+const { Paragraph, Link } = Typography;
 
 function Notification() {
   const [notifyMe, setNotifyMe] = useState(false);
-  const notifData = [
+  const [mythData, setMyth] = useState({ title: "", myth: "" });
+
+  const myths = [
     {
       key: 0,
       myth: "Taking sleeping pills is the best solution for insomnia.",
@@ -20,7 +23,7 @@ function Notification() {
     {
       key: 1,
       myth: "Insomnia is just a normal part of aging.",
-      data: "While sleep patterns may change with age, chronic insomnia is not a normal part of the aging process. Sleep problems in older adults can often be addressed and treated",
+      data: "While sleep patterns may change with age, chronic insomnia is not a normal part of the aging process. Sleep problems in older adults can often be addressed and treated.",
     },
     {
       key: 2,
@@ -30,7 +33,7 @@ function Notification() {
     {
       key: 3,
       myth: "Everyone needs eight hours of sleep per night.",
-      data: "The amount of sleep needed varies from person to person. While the average adult may require around 7-9 hours, individual sleep needs can range from 6-10 hours ",
+      data: "The amount of sleep needed varies from person to person. While the average adult may require around 7-9 hours, individual sleep needs can range from 6-10 hours.",
     },
     {
       key: 4,
@@ -38,59 +41,73 @@ function Notification() {
       data: " Insomnia can have various causes, including psychological, medical, and environmental factors. Its essential to identify and address the underlying cause of insomnia for effective treatment. ",
     },
   ];
-  const nofifyMe = () => {
+
+  const nofifyMe = (myth) => {
+    setMyth({ title: myth.myth, myth: myth.data });
     setNotifyMe(true);
   };
 
   const hideModal = () => {
     setNotifyMe(false);
   };
+
   return (
-    <StyledCarousel
-      slidesToShow={3}
-      arrows
-      prevArrow={<LeftCircleOutlined />}
-      nextArrow={<RightCircleOutlined />}
-      infinite={false}
-    >
-      {notifData?.map((items, index) => {
-        return (
-          <>
-            <Row gutter={[24, 24]} key={index}>
-              <Col span={23} key={index} xs={23} sm={23} md={23}>
-                <Card
-                  ellipsis
-                  key={index}
-                  hoverable
-                  onClick={(items) => nofifyMe(items.data)}
-                  style={{
-                    border: "2px solid #015871",
-                  }}
-                >
-                  <Meta
+    <>
+      <StyledCarousel
+        slidesToShow={3}
+        arrows
+        prevArrow={<LeftCircleOutlined />}
+        nextArrow={<RightCircleOutlined />}
+        infinite={false}
+      >
+        {myths?.map((items, index) => {
+          return (
+            <>
+              <Row gutter={[24, 24]} key={items.key}>
+                <Col span={23} xs={23} sm={23} md={23}>
+                  <Card
+                    ellipsis
+                    key={items.key}
+                    hoverable
+                    onClick={() => nofifyMe(items)}
                     style={{
-                      height: "7vh",
+                      border: "2px solid #015871",
                     }}
-                    // avatar={<SleepDiary />}
-                    avatar={<BellTwoTone twoToneColor="#eb2f96" />}
-                    description={items.data}
-                  />
-                </Card>
-              </Col>
-            </Row>
-            <Modal
-              title={items?.myth}
-              open={notifyMe}
-              onOk={hideModal}
-              onCancel={hideModal}
-              footer={null}
-            >
-              {items.data}
-            </Modal>
-          </>
-        );
-      })}
-    </StyledCarousel>
+                  >
+                    <Meta
+                      style={{
+                        height: "7vh",
+                      }}
+                      avatar={<BellTwoTone twoToneColor="#05b04c" />}
+                      description={
+                        <Paragraph
+                          ellipsis={{
+                            rows: 2,
+                            expandable: false,
+                            suffix: <Link>{"more"}</Link>,
+                          }}
+                        >
+                          {items.data}
+                        </Paragraph>
+                      }
+                    />
+                  </Card>
+                </Col>
+              </Row>
+            </>
+          );
+        })}
+      </StyledCarousel>
+      <Modal
+        title={mythData?.title}
+        open={notifyMe}
+        onOk={hideModal}
+        onCancel={hideModal}
+        footer={null}
+      >
+        {mythData.myth}
+      </Modal>
+    </>
   );
 }
 
@@ -102,10 +119,8 @@ const StyledCarousel = styled(Carousel)`
     cursor: grab;
   }
   .slick-slide {
-    /* margin: 7px; */
   }
   .slick-list {
-    /* background: #015871; */
     height: 15vh;
   }
   > .slick-dots li button {

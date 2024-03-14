@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Card, Result } from "antd";
+import { Card } from "antd";
 import SpotifyWebApi from "spotify-web-api-js";
 
 import SpotifyLogin from "./components/SpotifyLogin";
@@ -11,16 +11,16 @@ const s = new SpotifyWebApi();
 
 function Playlist() {
   document.title = "Playlist - Sleep with PeeS";
+
   const [{ token, playlists }, dispatch] = useStateValue();
   const [playlistId, setPlaylistId] = useState(
     playlists?.items?.[0]?.id || "2vP8QDwB5lY9FJrdunOiBY"
   );
-  console.log(playlists, playlists?.items?.[0]?.id, playlistId, "initialData");
+
   useEffect(() => {
     const hash = getTokenFromResponse();
     window.location.hash = "";
     let _token = hash.access_token;
-    console.log(_token, s, "details");
     // if (_token) {
     //   setToken(_token);
     //   s?.setAccessToken(_token);

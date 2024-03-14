@@ -15,19 +15,17 @@ function LandingPage() {
   }, [navigate]);
 
   return (
-    <>
-      <div className="App">
-        <header className="App-header">
-          <div className="App-link">Sleep Tech</div>
-          <div className="sub-title">PeeS</div>
-          <div className="title-theme">PeeS be with you. Sleep with PeeS!</div>
-        </header>
-        <div className="ocean">
-          <div className="wave"></div>
-          <div className="wave"></div>
-        </div>
+    <div className="App">
+      <header className="App-header">
+        <div className="App-link">Sleep Tech</div>
+        <div className="sub-title">PeeS</div>
+        <div className="title-theme">PeeS be with you. Sleep with PeeS!</div>
+      </header>
+      <div className="ocean">
+        <div className="wave"></div>
+        <div className="wave"></div>
       </div>
-    </>
+    </div>
   );
 }
 

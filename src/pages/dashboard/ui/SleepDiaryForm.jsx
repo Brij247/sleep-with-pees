@@ -14,9 +14,11 @@ import {
 
 import { Page } from "../../../app/generic";
 
+const { TextArea } = Input;
+
 function SleepDiaryForm() {
-  const { TextArea } = Input;
   const navigate = useNavigate();
+
   const initialValues = {
     date: null,
     dayofWeek: "",
@@ -42,6 +44,7 @@ function SleepDiaryForm() {
       minutes: null,
     },
   };
+
   const handleSubmit = (fieldsValue) => {
     const values = {
       ...fieldsValue,
@@ -52,9 +55,11 @@ function SleepDiaryForm() {
     console.log("Received values of form: ", values);
     navigate("/dashboard");
   };
+
   const onCancel = () => {
     navigate("/dashboard");
   };
+
   return (
     <Page
       title={"Sleep Diary"}

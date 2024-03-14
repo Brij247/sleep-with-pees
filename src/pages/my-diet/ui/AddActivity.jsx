@@ -1,4 +1,5 @@
 import { Tabs } from "antd";
+
 import { FoodActivityForm } from "./FoodActivityForm";
 import { PhysicalActivityForm } from "./PhysicalActivityForm";
 
@@ -15,5 +16,6 @@ export const AddActivity = () => {
       children: <PhysicalActivityForm />,
     },
   ];
+
   return <Tabs defaultActiveKey="1" type="card" size={"small"} items={items} />;
 };
