@@ -8,7 +8,7 @@ import {
 } from "@ant-design/icons";
 
 const { Meta } = Card;
-const { Paragraph } = Typography;
+const { Paragraph, Link } = Typography;
 
 function Notification() {
   const [notifyMe, setNotifyMe] = useState(false);
@@ -81,15 +81,11 @@ function Notification() {
                       avatar={<BellTwoTone twoToneColor="#05b04c" />}
                       description={
                         <Paragraph
-                          ellipsis={
-                            !notifyMe
-                              ? {
-                                  rows: 2,
-                                  expandable: true,
-                                  symbol: "more",
-                                }
-                              : false
-                          }
+                          ellipsis={{
+                            rows: 2,
+                            expandable: false,
+                            suffix: <Link>{"more"}</Link>,
+                          }}
                         >
                           {items.data}
                         </Paragraph>
