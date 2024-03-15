@@ -10,14 +10,26 @@ import {
   TimePicker,
   Rate,
   Space,
+  notification,
 } from "antd";
 
 import { Page } from "../../../app/generic";
+// import { useCreateSleepDiary } from "../api/dashboard.hooks";
+import { useMutation } from "@tanstack/react-query";
+import { baseUrl, useAxios } from "../../../services/axios";
 
 const { TextArea } = Input;
 
 function SleepDiaryForm() {
   const navigate = useNavigate();
+  const _axios = useAxios();
+
+  const mutation = useMutation({
+    mutationFn: (value) => {
+      console.log(value, "inside mutate");
+      return _axios.post(`${baseUrl}/api/sleep/sleeplog/create/`, value);
+    },
+  });
 
   const initialValues = {
     date: null,
@@ -45,18 +57,31 @@ function SleepDiaryForm() {
     },
   };
 
-  const handleSubmit = (fieldsValue) => {
+  const handleSubmit = async (fieldsValue) => {
     const values = {
       ...fieldsValue,
       date: fieldsValue["date"]?.format("YYYY-MM-DD"),
       bedTime: fieldsValue["bedTime"]?.format("HH:mm:ss"),
       wakeupTime: fieldsValue["wakeupTime"]?.format("HH:mm:ss"),
     };
-    console.log("Received values of form: ", values);
-    navigate("/dashboard");
+
+    mutation.mutate(values);
+    if (mutation.isSuccess) {
+      notification.success({
+        message: "Successful.",
+        description: "Form submitted successful.",
+      });
+      navigate("/dashboard");
+    } else {
+      notification.error({
+        message: "Try again",
+        description: "Form submitted un-successful.",
+      });
+    }
   };
 
   const onCancel = () => {
+    mutation.reset();
     navigate("/dashboard");
   };
 

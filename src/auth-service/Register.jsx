@@ -1,8 +1,9 @@
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import { Form, notification } from "antd";
 
 import RegisterForm from "./RegisterForm";
-import { axios } from "../services";
+import { baseUrl } from "../services/axios";
 
 function Register() {
   const [form] = Form.useForm();
@@ -20,7 +21,10 @@ function Register() {
     };
 
     try {
-      const response = await axios.post("/api/register/", requestData);
+      const response = await axios.post(
+        `${baseUrl}/api/register/`,
+        requestData
+      );
       if ((response.statusText = "Created")) {
         notification.success({
           message: "User created",

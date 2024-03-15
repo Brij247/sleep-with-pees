@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import styled from "styled-components";
+import axios from "axios";
 import {
   BookOutlined,
   CheckCircleOutlined,
@@ -19,7 +20,7 @@ import {
 import { Button, Layout, Menu, notification } from "antd";
 
 import Profile from "./Profile";
-import { axios } from "../../services";
+import { baseUrl } from "../../services/axios";
 
 const { Sider, Footer, Content } = Layout;
 
@@ -95,7 +96,7 @@ function AppLayout({ children }) {
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post("/api/logout/");
+      const response = await axios.post(`${baseUrl}/api/logout/`);
       console.log(response, "logout logout");
 
       axios.defaults.headers.common["Authorization"] = null;
@@ -108,6 +109,7 @@ function AppLayout({ children }) {
 
       navigate("/login");
     } catch (error) {
+      console.log(error);
       notification.error({
         message: "Logout Failed",
         description: "Something went wrong",

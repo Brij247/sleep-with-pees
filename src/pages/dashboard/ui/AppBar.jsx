@@ -10,16 +10,17 @@ const { Title } = Typography;
 
 const AppBar = () => {
   const handleSleepDiary = () => {
-    window.location.replace("/sleep-diary");
+    window.location.replace("/sleep-with-pees/sleep-diary");
   };
 
   const handleSleepHygine = () => {
-    window.location.replace("/sleep-hygine");
+    window.location.replace("/sleep-with-pees/sleep-hygine");
   };
 
   const handleScribbleSpace = () => {
-    window.location.replace("/my-scribble-space");
+    window.location.replace("/sleep-with-pees/my-scribble-space");
   };
+
   return (
     <Row gutter={[16, 16]}>
       <Col span={8} xs={24} sm={24} md={8}>
