@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Card } from "antd";
-import FullCalendar from "@fullcalendar/react";
+import FullCalendar, { formatDate } from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
@@ -9,7 +9,7 @@ import listPlugin from "@fullcalendar/list";
 import styled from "styled-components";
 
 function CalendarWidget() {
-  const [setCurrentEvents] = useState([]);
+  const [currentEvents, setCurrentEvents] = useState([]);
 
   const handleDateClick = (selected) => {
     const title = prompt("Please enter a new title for your event");
