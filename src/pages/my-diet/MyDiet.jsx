@@ -14,10 +14,7 @@ function MyDiet() {
     setOpenActivityModal(false);
   };
 
-  const onChange = (value, dateString) => {
-    console.log("Selected Time: ", value);
-    console.log("Formatted Selected Time: ", dateString);
-  };
+  const onChange = (value, dateString) => {};
 
   const onOk = (value) => {
     setOpenActivityModal(false);

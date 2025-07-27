@@ -5,7 +5,7 @@ import SidebarOption from "./SideBarOptions";
 import { useStateValue } from "../config/StateProvider";
 
 function Sidebar({ setPlaylistId }) {
-  const [{ playlists }, dispatch] = useStateValue();
+  const [{ playlists }] = useStateValue();
 
   return (
     <div className="sidebar">
@@ -21,7 +21,6 @@ function Sidebar({ setPlaylistId }) {
       <strong className="sidebar__title">PLAYLISTS</strong>
       <hr />
       {playlists?.items?.map((playlist) => {
-        console.log(playlist);
         return (
           <SidebarOption
             option={playlist.name}

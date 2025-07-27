@@ -3,8 +3,9 @@ import { UserOutlined } from "@ant-design/icons";
 
 import { useStateValue } from "../config/StateProvider";
 import "./Header.css";
+
 function Header({ spotify }) {
-  const [{ user }, dispatch] = useStateValue();
+  const [{ user }] = useStateValue();
 
   return (
     <div className="header">

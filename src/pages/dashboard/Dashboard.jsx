@@ -21,10 +21,10 @@ function Dashboard() {
         <Container>
           <Row gutter={[gutter, gutter]}>
             <Col span={24}>
-              <Row gutter={[gutter, gutter]}>
-                <Col xs={24} sm={24} md={24} lg={24} xl={24}>
+              <Row align={"middle"} gutter={[gutter, gutter]}>
+                <_Col xs={24} sm={24} md={24} lg={24} xl={24}>
                   <Notification />
-                </Col>
+                </_Col>
                 <Col xs={24} sm={24} md={24} lg={24} xl={24}>
                   <AppBar />
                 </Col>
@@ -50,4 +50,9 @@ export default Dashboard;
 
 const Container = styled.div`
   padding: 32px;
+`;
+
+const _Col = styled(Col)`
+  padding-left: 45px !important;
+  padding-right: 45px !important;
 `;

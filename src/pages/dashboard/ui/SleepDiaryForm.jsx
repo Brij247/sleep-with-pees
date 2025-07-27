@@ -14,7 +14,6 @@ import {
 } from "antd";
 
 import { Page } from "../../../app/generic";
-// import { useCreateSleepDiary } from "../api/dashboard.hooks";
 import { useMutation } from "@tanstack/react-query";
 import { baseUrl, useAxios } from "../../../services/axios";
 
@@ -26,7 +25,6 @@ function SleepDiaryForm() {
 
   const mutation = useMutation({
     mutationFn: (value) => {
-      console.log(value, "inside mutate");
       return _axios.post(`${baseUrl}/api/sleep/sleeplog/create/`, value);
     },
   });
