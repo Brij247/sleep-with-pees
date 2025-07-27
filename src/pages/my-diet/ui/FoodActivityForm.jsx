@@ -10,7 +10,6 @@ export const FoodActivityForm = () => {
         "YYYY-MM-DD HH:mm:ss"
       ),
     };
-    console.log("Received values of form: ", values);
     form.resetFields();
   };
 

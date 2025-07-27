@@ -25,7 +25,6 @@ function Playlist() {
     //   setToken(_token);
     //   s?.setAccessToken(_token);
     //   s.getMe().then((user) => {
-    //     console.log(user);
     //   });
     // }
     if (_token) {
@@ -71,8 +70,6 @@ function Playlist() {
       });
     }
   }, [token, dispatch, playlistId]);
-
-  console.log(s, "spotify");
 
   return (
     <Card title={"Playlist"}>

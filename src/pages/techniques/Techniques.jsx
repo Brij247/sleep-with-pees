@@ -7,7 +7,7 @@ import { TechCard } from "./ui";
 function Techniques() {
   document.title = "Techniques - Sleep with PeeS";
 
-  const gutter = 32;
+  const gutter = 16;
 
   return (
     <Page
@@ -15,7 +15,7 @@ function Techniques() {
       content={
         <Container>
           <Row gutter={[gutter, gutter]}>
-            <Col span={24}>
+            <Col span={[16, 16]}>
               <TechCard />
             </Col>
           </Row>

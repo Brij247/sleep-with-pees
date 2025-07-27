@@ -1,16 +1,24 @@
-import { Tldraw, useFileSystem } from "@tldraw/tldraw";
+import { Tldraw } from "@tldraw/tldraw";
+import styled from "styled-components";
 
 function Scribble() {
   return (
     <div
       style={{
         height: "70vh",
-        width: "20vw",
+        width: "100px",
+        overflow: "hidden",
       }}
     >
-      <Tldraw />;
+      <_Tldraw />
     </div>
   );
 }
 
 export default Scribble;
+
+const _Tldraw = styled(Tldraw)`
+  .tldraw-wrapper > * {
+    max-width: 10vw;
+  }
+`;

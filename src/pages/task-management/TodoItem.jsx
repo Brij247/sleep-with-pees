@@ -1,4 +1,4 @@
-import { Tooltip, Tag, List, Button, Popconfirm, Switch } from "antd";
+import { Tooltip, List, Button, Popconfirm, Switch } from "antd";
 import { CloseOutlined, CheckOutlined } from "@ant-design/icons";
 
 function TodoItem({ todo, onTodoRemoval, onTodoToggle }) {
@@ -29,7 +29,9 @@ function TodoItem({ todo, onTodoRemoval, onTodoToggle }) {
       key={todo.id}
     >
       <div>
-        <Tag color={todo.completed ? "cyan" : "red"}>{todo.name}</Tag>
+        <ul>
+          <li>{todo.name}</li>
+        </ul>
       </div>
     </List.Item>
   );

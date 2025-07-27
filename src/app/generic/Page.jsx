@@ -1,7 +1,9 @@
 import { Layout } from "antd";
 import { Divider } from "antd/es";
 import styled from "styled-components";
+
 const { Header } = Layout;
+
 const Page = ({ title, content = <div /> }) => {
   return (
     <_Page>
@@ -17,6 +19,7 @@ const Page = ({ title, content = <div /> }) => {
 };
 
 export default Page;
+
 const _Page = styled.div`
   background-color: #fff;
 `;
@@ -26,6 +29,6 @@ const PageContent = styled.div`
 `;
 const _Header = styled(Header)`
   background-color: #fff;
-  font-weight: 500;
-  font-size: 2rem;
+  font-weight: bold;
+  font-size: 1rem;
 `;

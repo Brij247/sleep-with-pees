@@ -15,23 +15,8 @@ export const Calender = () => {
   const [currentEvents, setCurrentEvents] = useState([]);
   const [addDayTask, setAddDayTask] = useState(false);
 
-  console.log(currentEvents);
-
   const handleDateClick = (selected) => {
     setAddDayTask(true);
-    // const title = prompt("Please enter a new title for your event");
-    // const calendarApi = selected.view.calendar;
-    // calendarApi.unselect();
-
-    // if (title) {
-    //   calendarApi.addEvent({
-    //     id: `${selected.dateStr}-${title}`,
-    //     title,
-    //     start: selected.startStr,
-    //     end: selected.endStr,
-    //     allDay: selected.allDay,
-    //   });
-    // }
   };
 
   const handleEventClick = (selected) => {
@@ -41,9 +26,7 @@ export const Calender = () => {
       onOk() {
         selected.event.remove();
       },
-      onCancel() {
-        console.log("Cancel");
-      },
+      onCancel() {},
     });
   };
 

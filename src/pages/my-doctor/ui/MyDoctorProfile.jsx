@@ -6,7 +6,6 @@ import { useFetchDoctorsList } from "../api/doctorList.hook";
 
 function MyDoctorProfile() {
   const { data: doctorList, isPending, error } = useFetchDoctorsList();
-  console.log(doctorList, isPending, error, "myDoctorsList");
 
   return doctorList?.length > 0 ? (
     <Row gutter={[16, 16]}>

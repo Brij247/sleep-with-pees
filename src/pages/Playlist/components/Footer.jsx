@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import {
   StepBackwardOutlined,
   StepForwardOutlined,
@@ -12,12 +12,9 @@ import "./Footer.css";
 import { useStateValue } from "../config/StateProvider";
 
 function Footer({ spotify }) {
-  const [{ token, item, playing }, dispatch] = useStateValue();
-  console.log(item);
+  const [{ item, playing }, dispatch] = useStateValue();
   useEffect(() => {
     spotify.getMyCurrentPlaybackState().then((r) => {
-      console.log(r);
-
       dispatch({
         type: "SET_PLAYING",
         playing: r.is_playing,
@@ -114,19 +111,7 @@ function Footer({ spotify }) {
         <StepForwardOutlined onClick={skipPrevious} className="footer__icon" />
         <RetweetOutlined className="footer__green" />
       </div>
-      <div className="footer__right">
-        {/* <Grid container spacing={2}>
-          <Grid item>
-            <HomeOutlined />
-          </Grid>
-          <Grid item>
-            <HomeOutlined />
-          </Grid>
-          <Grid item xs>
-            <Slider aria-labelledby="continuous-slider" />
-          </Grid>
-        </Grid> */}
-      </div>
+      <div className="footer__right"></div>
     </div>
   );
 }

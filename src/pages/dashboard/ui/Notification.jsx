@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Card, Carousel, Col, Modal, Row, Typography } from "antd";
+import { Card, Carousel, Col, Modal, Typography } from "antd";
 import styled from "styled-components";
 import {
   BellTwoTone,
@@ -42,7 +42,7 @@ function Notification() {
     },
   ];
 
-  const nofifyMe = (myth) => {
+  const getNotified = (myth) => {
     setMyth({ title: myth.myth, myth: myth.data });
     setNotifyMe(true);
   };
@@ -60,40 +60,38 @@ function Notification() {
         nextArrow={<RightCircleOutlined />}
         infinite={false}
       >
-        {myths?.map((items, index) => {
+        {myths?.map((items) => {
           return (
             <>
-              <Row gutter={[24, 24]} key={items.key}>
-                <Col span={23} xs={23} sm={23} md={23}>
-                  <Card
-                    ellipsis
-                    key={items.key}
-                    hoverable
-                    onClick={() => nofifyMe(items)}
+              <Col span={23} xs={23} sm={23} md={23}>
+                <Card
+                  ellipsis
+                  key={items.key}
+                  hoverable
+                  onClick={() => getNotified(items)}
+                  style={{
+                    border: "2px solid #015871",
+                  }}
+                >
+                  <Meta
                     style={{
-                      border: "2px solid #015871",
+                      height: "6vh",
                     }}
-                  >
-                    <Meta
-                      style={{
-                        height: "7vh",
-                      }}
-                      avatar={<BellTwoTone twoToneColor="#05b04c" />}
-                      description={
-                        <Paragraph
-                          ellipsis={{
-                            rows: 2,
-                            expandable: false,
-                            suffix: <Link>{"more"}</Link>,
-                          }}
-                        >
-                          {items.data}
-                        </Paragraph>
-                      }
-                    />
-                  </Card>
-                </Col>
-              </Row>
+                    avatar={<BellTwoTone twoToneColor="#05b04c" />}
+                    description={
+                      <Paragraph
+                        ellipsis={{
+                          rows: 2,
+                          expandable: false,
+                          suffix: <Link>{"more"}</Link>,
+                        }}
+                      >
+                        {items.data}
+                      </Paragraph>
+                    }
+                  />
+                </Card>
+              </Col>
             </>
           );
         })}
@@ -121,7 +119,7 @@ const StyledCarousel = styled(Carousel)`
   .slick-slide {
   }
   .slick-list {
-    height: 15vh;
+    /* height: 15vh; */
   }
   > .slick-dots li button {
     display: none;

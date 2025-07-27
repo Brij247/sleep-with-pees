@@ -1,9 +1,9 @@
-import React from "react";
 import "./Body.css";
 import Header from "./Header";
 import SongRow from "./SongRow";
 import { PlayCircleFilled } from "@ant-design/icons";
 import { useStateValue } from "../config/StateProvider";
+
 function Body({ spotify }) {
   const [{ discover_weekly }, dispatch] = useStateValue();
 
@@ -27,7 +27,6 @@ function Body({ spotify }) {
   };
 
   const playSong = (id) => {
-    console.log(id);
     const trackUri = `spotify:track:${id}`;
     spotify
       .getMyCurrentPlaybackState()
@@ -41,7 +40,6 @@ function Body({ spotify }) {
               uris: [trackUri],
             })
             .then((res) => {
-              console.log(res, "currentlu play");
               spotify.getMyCurrentPlayingTrack().then((r) => {
                 dispatch({
                   type: "SET_ITEM",
@@ -63,7 +61,6 @@ function Body({ spotify }) {
         uris: [trackUri],
       })
       .then((res) => {
-        console.log(res, "currentlu play");
         spotify.getMyCurrentPlayingTrack().then((r) => {
           dispatch({
             type: "SET_ITEM",
